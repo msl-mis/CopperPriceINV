@@ -1,0 +1,8 @@
+D:\_SoureCode\CopperPriceINV\CopperPriceINV\bin\Debug\CopperPriceINV.exe.config
+D:\_SoureCode\CopperPriceINV\CopperPriceINV\bin\Debug\CopperPriceINV.exe
+D:\_SoureCode\CopperPriceINV\CopperPriceINV\bin\Debug\CopperPriceINV.pdb
+D:\_SoureCode\CopperPriceINV\CopperPriceINV\obj\Debug\CopperPriceINV.csproj.AssemblyReference.cache
+D:\_SoureCode\CopperPriceINV\CopperPriceINV\obj\Debug\CopperPriceINV.csproj.CoreCompileInputs.cache
+D:\_SoureCode\CopperPriceINV\CopperPriceINV\obj\Debug\CopperPriceINV.exe
+D:\_SoureCode\CopperPriceINV\CopperPriceINV\obj\Debug\CopperPriceINV.pdb
+D:\_SoureCode\CopperPriceINV\CopperPriceINV\obj\Debug\CopperPriceINV.exe.config
