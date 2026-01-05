@@ -225,9 +225,9 @@ namespace CopperPriceINV
 				                                            , CN.TC009 AS 下單方式
 				                                            , CND.TD010 AS 採購單價RMB		
 				                                            , cum_convert 匯率
-				                                            ,ROUND((CND.TD010*cum_convert)/1.11,2) AS '銅未稅價(NTD)'
+				                                            ,ROUND((CND.TD010*cum_convert)/1.126,2) AS '銅未稅價(NTD)'
 				                                            ,CND.TD058 AS 數量
-				                                            , ROUND((CND.TD010 * CND.TD058 / 1.11	) * cum_convert, 2) AS '金額(NTD)'
+				                                            , ROUND((CND.TD010 * CND.TD058 / 1.126	) * cum_convert, 2) AS '金額(NTD)'
 				                                            ,SUM(CND.TD058) over(ORDER BY CN.TC002 DESC,CND.TD003) 累加數量
 				                                            ,@inventory 總庫存
 				                                            ,(@inventory-SUM(CND.TD058) over(ORDER BY CN.TC002 DESC,CND.TD003)) 庫存差額
