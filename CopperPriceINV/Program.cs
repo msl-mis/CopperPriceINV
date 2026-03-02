@@ -206,7 +206,7 @@ namespace CopperPriceINV
 		                                            AND (MVE.TC003 <= EOMONTH(GETDATE()))--採購日期
 		                                            AND (MVE.TC014 = 'Y')
 		                                            AND (cum_code = '美金')
-                                                    AND MVED.TD016='Y'--已結案
+                                                    --AND MVED.TD016='Y'--已結案
 		                                            AND LEFT(CONVERT(varchar(100), cum_dateok, 112),6)=LEFT(CONVERT(varchar(10), MVE.TC003, 112),6) 
                                                     AND cum_chk='Y'
 	                                            ) vcopper
@@ -245,7 +245,7 @@ namespace CopperPriceINV
 			                                            AND (CN.TC003 <= EOMONTH(GETDATE()))--採購日期. 當月月底
 			                                            AND (CN.TC014 = 'Y')--確認碼
 			                                            AND (cum_code = '人民幣')--匯率
-                                                        AND CND.TD016='Y'--已結案
+                                                        --AND CND.TD016='Y'--已結案
 			                                            AND LEFT(CONVERT(varchar(100), cum_dateok, 112),6)=LEFT(CONVERT(varchar(10), CN.TC003, 112),6) 
                                                         AND cum_chk='Y'
 	                                            ) copper
