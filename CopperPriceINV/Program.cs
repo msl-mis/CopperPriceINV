@@ -189,12 +189,12 @@ namespace CopperPriceINV
 			                                            , MVED.TD010 AS ERP採購單價			
 			                                            , cum_convert 匯率
 			                                            , ROUND(MVED.TD010* cum_convert/1000,2)  AS '採購價(NTD)'				
-			                                            , MVE.TC023*1000 AS '數量(kg)'
-			                                            , ROUND((MVED.TD010 * MVE.TC023) * cum_convert, 2) AS '金額(NTD)'
-			                                            ,SUM(MVE.TC023*1000) over(ORDER BY MVE.TC002 DESC,MVED.TD003) 累加數量
+			                                            , MVED.TD008*1000 AS '數量(kg)'
+			                                            , ROUND((MVED.TD010 * MVED.TD008) * cum_convert, 2) AS '金額(NTD)'
+			                                            ,SUM(MVED.TD008*1000) over(ORDER BY MVE.TC002 DESC,MVED.TD003) 累加數量
 			                                            ,@vninventory 總庫存
-			                                            ,(@vninventory-SUM(MVE.TC023*1000) over(ORDER BY MVE.TC002 DESC,MVED.TD003)) 庫存差額
-			                                            ,IIF((@vninventory-SUM(MVE.TC023*1000) over(ORDER BY MVE.TC002 DESC,MVED.TD003) )>0,'1','0') 計算欄
+			                                            ,(@vninventory-SUM(MVED.TD008*1000) over(ORDER BY MVE.TC002 DESC,MVED.TD003)) 庫存差額
+			                                            ,IIF((@vninventory-SUM(MVED.TD008*1000) over(ORDER BY MVE.TC002 DESC,MVED.TD003) )>0,'1','0') 計算欄
 	                                            FROM [ERPDB].[TESTMVE1].dbo.PURTC MVE
 		                                            INNER JOIN [ERPDB].[TESTMVE1].dbo.PURTD MVED     ON MVE.TC001 = MVED.TD001 AND MVE.TC002 = MVED.TD002
 		                                            INNER JOIN [ERPDB].[TESTMVE1].dbo.PURMA MVEA	 ON MVEA.MA001 = MVE.TC004
