@@ -188,8 +188,8 @@ namespace CopperPriceINV
 			                                            , MVE.TC009 AS 下單方式
 			                                            , MVED.TD010 AS ERP採購單價			
 			                                            , cum_convert 匯率
-			                                            , ROUND(MVED.TD010* cum_convert/1000,2)  AS '採購價(NTD)'				
-			                                            , MVED.TD008*1000 AS '數量(kg)'
+                                                        ,CASE WHEN MVED.TD059 = 'T' THEN ROUND((MVED.TD010*cum_convert)/1000,2) ELSE ROUND((MVED.TD010*cum_convert),2) END AS '採購價(NTD)'
+                                                        ,CASE WHEN MVED.TD059 = 'T' THEN ROUND(MVED.TD008*1000,0) ELSE ROUND(MVED.TD008,1) END AS '數量(kg)'
 			                                            , ROUND((MVED.TD010 * MVED.TD008) * cum_convert, 2) AS '金額(NTD)'
 			                                            ,SUM(MVED.TD008*1000) over(ORDER BY MVE.TC002 DESC,MVED.TD003) 累加數量
 			                                            ,@vninventory 總庫存
